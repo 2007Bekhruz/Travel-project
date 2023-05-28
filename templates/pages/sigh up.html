@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap')
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  font-family: 'Montserrat', sans-serif
+  color: rgba(47, 54, 64,1.0)
+
+a:visited
+  color: inherit
+
+.background
+  position: absolute
+  height: 100vh
+  width: 100vw
+  z-index: -1
+  background: url('https://images.unsplash.com/photo-1502784444187-359ac186c5bb?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ') center center
+  filter: blur(5px)
+
+.Sign-Up
+  position: relative
+  text-align: center
+  padding: 30px
+  color: rgba(47, 54, 64,1.0)
+  background: white
+  border-top-left-radius: 20px
+  border-bottom-left-radius: 20px
+  overflow: hidden
+  min-width: 275px
+
+  & h1
+    font-size: 18pt
+    font-weight: normal
+    margin-bottom: 15px
+
+  & p
+    font-size: 10pt
+    margin-bottom: 25px
+
+  & form
+    margin-bottom: 15px
+
+    & input
+      margin-bottom: 20px
+      height: 40px
+      width: 100%
+      border: 0
+      border-bottom: 2px solid rgba(0,0,0,.1)
+      outline: none
+
+  & button
+    display: block
+    margin: 0 auto 20px auto
+    outline: none
+
+    &.start
+      padding: 10px 20px
+      border-radius: 20px
+      border: none
+      background: rgba(0, 151, 230,1.0)
+      color: white
+
+    &.google
+      padding: 10px 20px
+      border: none
+      background: transparent
+      font-size: 10pt
+
+  & h2
+    font-size: 10pt
+    font-weight: normal
+    text-align: center
+    color: rgba(47, 54, 64, 1.0)
+
+    & a
+      text-decoration: underline
+      font-weight: bold
+
+.Quote
+  position: relative
+  border-top-right-radius: 20px
+  border-bottom-right-radius: 20px
+  overflow: hidden
+  min-width: 275px
+
+footer, h2
+  position: absolute
+  bottom: 0
+  left: 0
+  z-index: 1
+  height: 100px
+  width: 100%
+  padding-top: 60px
+  font-size: 10pt
+
+footer
+  background: rgba(0, 151, 230,1.0)
+  color: white
+  padding-left: 10%
+
+.img
+  position: absolute
+  top: 0
+  right: 0
+  width: 90%
+  height: 420px
+  z-index: 9999
+
+  & img
+    height: 100%
+
+.quote
+  position: relative
+  bottom: 160px
+  margin: 0 auto
+  width: 80%
+  padding: 20px
+  background: rgba(0,0,0,.6)
+  z-index: 9999
+  color: white
+  text-align: center
+  font-size: 10pt
+  box-sizing: border-box
+
+span i, button i
+  font-size: 18pt
+
+.input
+  position: relative
+
+  & i
+    position: absolute
+    left: 5px
+    bottom: 15px
+    color: rgba(0,0,0,.6)
+
+input
+  font-size: 10pt
+  padding-left: 40px
+  display: block
+  width: 80%
+  border: none
+
+label
+  color: #999
+  font-size: 10pt
+  font-weight: normal
+  position: absolute
+  pointer-events: none
+  left: 40px
+  bottom: 15px
+  transition: .2s ease all
+
+input:focus
+  border-bottom: 2px solid rgba(0, 151, 230,1.0) !important
+  transition: .2s all ease-in-out
+
+  & ~ i
+    color: rgba(0, 151, 230,1.0)
+    transition: .2s all ease-in-out
+
+input:focus ~ label, input:valid ~ label
+  bottom: 40px
+  font-size: 10pt
+  color: rgba(0, 151, 230,1.0)
+
+input:valid
+  border-bottom: 2px solid rgba(68, 189, 50,1.0) !important
+
+  & ~ i, & ~ label
+    color: rgba(68, 189, 50,1.0)
+
+
+///////////////////
+// LAYOUT
+///////////////////
+
+.wrapper
+  height: 100vh
+  width: 100vw
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-gap: 10px
+  grid-template-areas: ". a a ." ". a a ."
+
+.grid-container
+  grid-area: a
+  align-self: center
+  justify-self: center
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-rows: 1fr
+  grid-template-areas: "Sign-Up Quote"
+  height: 485px
+  width: 50vw
+  max-width: 745px
+  min-width: 475px
+
+
+.Sign-Up
+  grid-area: Sign-Up
+
+.Quote
+  grid-area: Quote
+  background: white
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
